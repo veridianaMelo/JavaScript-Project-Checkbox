@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Contando Checkbox</title>
+<script language="JavaScript">
+<!--****funcao javascript*******-->
+function contaCheckbox(selecionados){
+	var inputs, x, selecionados = 0;
+	inputs = document.getElementsByTagName('input');
+	for(x=0; x <inputs.length; x++){
+		if(inputs[x].type == 'checkbox'){
+			if(inputs[x].checked==true && inputs[x].id == 'check'){
+				selecionados++;
+			}
+		}
+	}
+	return selecionados;
+}
+function pegaQuantidade(){
+	var total;
+	total = contaCheckbox();
+	if(total > 0){
+		alert("A quantidade total do pedido foi : " + total);
+	}else{
+		alert("Selecione no mímino um produto.");
+	}
+}
+</script>
+<h1>Fazendo checkbox com JavaScript</h1>
+</head>
+<body>
+<h3>Solicite seu pedido!</h3>
+<form>
+<table>
+<tr>
+	<td>
+	<input type="checkbox" value="valor 1" id="check">Cachorro-quente<br/>
+	<input type="checkbox" value="valor 2" id="check">Tapioca<br/>
+	<input type="checkbox" value="valor 3" id="check">Coxinha<br/>
+	<input type="checkbox" value="valor 4" id="check">Croissant<br/>
+	<input type="checkbox" value="valor 5" id="check">Pão-Doce<br/>
+	<input type="checkbox" value="valor 6" id="check">Coffee<br/>
+	<input type="checkbox" value="valor 7" id="check">Água<br/>
+	<input type="checkbox" value="valor 8" id="check">Limonada<br/>
+	<input type="checkbox" value="valor 9" id="check">Suco de laranja<br/>
+	<input type="checkbox" value="valor 10" id="check">Chocolate pequeno<br/>
+
+	</td>
+</tr>
+</table>
+<input type="button" value="Comprando" onclick="pegaQuantidade();"/>
+</form>
+</body>
+</html>	
